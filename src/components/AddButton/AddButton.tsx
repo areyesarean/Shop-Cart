@@ -4,24 +4,32 @@ import "./styleAddButton.css";
 interface Porps {
   maxCant: number;
   initialCant: number;
+  cantSelect: number;
+  onCantSelectChange: any;
 }
 
-const AddButton = ({ maxCant, initialCant }: Porps) => {
+const AddButton = ({
+  maxCant,
+  initialCant,
+  cantSelect,
+  onCantSelectChange,
+}: Porps) => {
   const [twoBtn, setTwoBtn] = useState(false);
-  const [cant, setCant] = useState(initialCant);
-  useEffect(() => {
-    console.log(cant);
-  }, [cant]);
 
-  const handleDecrement = () => cant - 1 < initialCant ? cant : setCant(cant - 1);
-  const handleIncrement = () => (cant + 1 > maxCant ? cant : setCant(cant + 1));
+  const handleDecrement = () =>
+    cantSelect - 1 < initialCant
+      ? cantSelect
+      : onCantSelectChange(cantSelect - 1);
+
+  const handleIncrement = () =>
+    cantSelect + 1 > maxCant ? cantSelect : onCantSelectChange(cantSelect + 1);
 
   const handleShowTwo = () => {
-    setCant(cant + 1);
+    onCantSelectChange(cantSelect + 1);
     setTwoBtn(true);
   };
 
-  return twoBtn && cant > 0 ? (
+  return twoBtn && cantSelect > 0 ? (
     <div>
       <button className="btn decrement" onClick={handleDecrement}>
         -

@@ -9,7 +9,7 @@ const Estanteria = () => {
       <h1>Productos que ofertamos</h1>
       <div className="flex-box">
         {productos.map((prod: any) => (
-          <Producto key={prod.id} prod={prod} />
+          <Producto key={prod.id} prod={prod}/>
         ))}
       </div>
     </div>
