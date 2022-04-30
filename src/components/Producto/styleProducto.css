@@ -1,0 +1,16 @@
+.card-producto {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-desc {
+  text-align: center;
+}
+.product-info {
+  font-weight: bold;
+}

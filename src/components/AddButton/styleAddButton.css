@@ -1,0 +1,30 @@
+.btn {
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.add {
+  color: #fff;
+  padding: 5px 50px;
+  border: 1px solid #f7a818;
+  background-color: #f7a818;
+  font-size: 15px;
+}
+
+.decrement{
+  color: rgb(255, 255, 255);
+  padding: 5px 13px;
+  border: 1px solid #d52d1e;
+  background-color: #d52d1e;
+  font-size: 15px
+}
+
+.increment {
+  color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #f7a818;
+  background-color: #f7a818;
+  font-size: 15px;
+}
