@@ -16,10 +16,12 @@ const AddButton = ({
 }: Porps) => {
   const [twoBtn, setTwoBtn] = useState(false);
 
+  useEffect(() => {
+    initialCant > 0 && setTwoBtn(true);
+  }, []);
+
   const handleDecrement = () =>
-    cantSelect - 1 < initialCant
-      ? cantSelect
-      : onCantSelectChange(cantSelect - 1);
+    cantSelect - 1 < 0 ? cantSelect : onCantSelectChange(cantSelect - 1);
 
   const handleIncrement = () =>
     cantSelect + 1 > maxCant ? cantSelect : onCantSelectChange(cantSelect + 1);

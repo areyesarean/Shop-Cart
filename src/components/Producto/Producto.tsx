@@ -1,33 +1,44 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../actions/actionShop";
 import AddButton from "../AddButton/AddButton";
 import "./styleProducto.css";
 
 interface Props {
   prod: any;
+  initialCant: number;
+  info?: boolean;
+  textCart?: boolean;
 }
 
-const Producto = ({ prod }: Props) => {
-  const [cantSelec, setCantSelec] = useState(0);
+const Producto = ({ prod, initialCant, info, textCart }: Props) => {
+  const [cantSelec, setCantSelec] = useState(initialCant);
+  const dispatch = useDispatch();
 
   const handleCantSelect = (cant: number) => {
-    console.log(cant);
     setCantSelec(cant);
+    dispatch(addToCart(prod.id, cant));
   };
 
   return (
     <div className="card-producto">
-      <p className="text-desc">
-        {cantSelec} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quia
-        molestias...
-      </p>
+      {cantSelec > 0 && <div className="badge">{cantSelec}</div>}
+      <h2 className="prod-name">{prod.name}</h2>
+      {info && (
+        <p className="text-desc">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quia
+          molestias...
+        </p>
+      )}
+      <span>Disponibles: {prod.cantStock}</span>
       <p className="product-info">
-        {prod.name} . ${prod.price}
+        ${prod.price}  {textCart && `x${cantSelec} -- $${(prod.price * cantSelec).toFixed(2)}`}
       </p>
       <AddButton
         cantSelect={cantSelec}
         onCantSelectChange={handleCantSelect}
         maxCant={prod.cantStock}
-        initialCant={0}
+        initialCant={initialCant}
       />
     </div>
   );

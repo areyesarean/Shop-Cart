@@ -1,5 +1,6 @@
 .card-producto {
-  width: 200px;
+  position: relative;
+  width: 300px;
   height: 200px;
   margin: 5px;
   padding: 10px;
@@ -7,10 +8,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: #fff;
 }
 .text-desc {
   text-align: center;
 }
 .product-info {
   font-weight: bold;
+}
+
+p{
+  margin: 0px;
+}
+
+.badge{
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f7a818;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.prod-name{
+  margin: 3px;
 }

@@ -1,8 +1,8 @@
 import { actionTypes } from "../types/actionTypes";
 
-export const addToCart = (id: number) => ({
+export const addToCart = (id: number, cantSelect: number) => ({
   type: actionTypes.ADDCART,
-  payload: id,
+  payload: {id, cantSelect},
 });
 
 export const delFromCart = (id: number, all: boolean = false) =>
