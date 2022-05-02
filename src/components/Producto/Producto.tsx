@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../actions/actionShop";
 import AddButton from "../AddButton/AddButton";
@@ -17,8 +17,11 @@ const Producto = ({ prod, initialCant, info, textCart }: Props) => {
 
   const handleCantSelect = (cant: number) => {
     setCantSelec(cant);
-    dispatch(addToCart(prod.id, cant));
   };
+
+  useEffect(() => {
+    dispatch(addToCart(prod.id, cantSelec));
+  }, [cantSelec]);
 
   return (
     <div className="card-producto">
@@ -32,7 +35,8 @@ const Producto = ({ prod, initialCant, info, textCart }: Props) => {
       )}
       <span>Disponibles: {prod.cantStock}</span>
       <p className="product-info">
-        ${prod.price}  {textCart && `x${cantSelec} -- $${(prod.price * cantSelec).toFixed(2)}`}
+        ${prod.price}{" "}
+        {textCart && `x${cantSelec} -- $${(prod.price * cantSelec).toFixed(2)}`}
       </p>
       <AddButton
         cantSelect={cantSelec}
