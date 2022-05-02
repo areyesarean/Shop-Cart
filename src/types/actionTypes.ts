@@ -4,3 +4,10 @@ export const actionTypes = {
   REMOVEALLCART: "@removeAllCart",
   CLEARCART: "@clearCart",
 };
+
+
+export const actionAuthTypes = {
+  LOGIN: "@login",
+  LOGOUT: "@logout",
+  INITSTATE: "@initStateAuth",
+};
