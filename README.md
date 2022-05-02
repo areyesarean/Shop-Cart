@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Carrito de compras con react, Redux , react router 6
 
 ## Available Scripts
 
