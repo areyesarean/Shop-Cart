@@ -11,3 +11,9 @@ export const delFromCart = (id: number, all: boolean = false) =>
     : { type: actionTypes.REMOVECART, payload: id };
 
 export const clearCart = () => ({ type: actionTypes.CLEARCART });
+
+
+export const initProducts = (products: any[]) => ({
+  type: actionTypes.INITPRODUCT,
+  payload: products,
+});

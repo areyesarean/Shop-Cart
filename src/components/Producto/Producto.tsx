@@ -21,7 +21,7 @@ const Producto = ({ prod, initialCant, info, textCart }: Props) => {
 
   useEffect(() => {
     dispatch(addToCart(prod.id, cantSelec));
-  }, [cantSelec]);
+  }, [cantSelec, dispatch, prod.id]);
 
   return (
     <div className="card-producto">

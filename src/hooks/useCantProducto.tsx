@@ -9,7 +9,7 @@ const useCantProducto = () => {
   useEffect(() => {
     setTotalPagar(0);
     setCant(0);
-    cart.map((prod: any) => {
+    cart.forEach((prod: any) => {
       setTotalPagar((total) => (total += prod.price * prod.cantSelect));
       setCant((cant) => (cant += prod.cantSelect));
     });

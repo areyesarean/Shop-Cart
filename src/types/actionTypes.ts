@@ -3,6 +3,7 @@ export const actionTypes = {
   REMOVECART: "@removeCart",
   REMOVEALLCART: "@removeAllCart",
   CLEARCART: "@clearCart",
+  INITPRODUCT: "@initproduct",
 };
 
 
